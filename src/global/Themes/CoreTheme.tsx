@@ -7,11 +7,11 @@ export const CoreTheme = {
     },
     utils: {
       text: {
-        dark: '#140C1E',
+        dark: '#1c3b67',
         light: '#ECEEF1',
       },
       border: {
-        mid: '#DEDEDE',
+        mid: '#e9e9e9',
         dark: '#392F46',
       },
       link: '#3C7EFF',

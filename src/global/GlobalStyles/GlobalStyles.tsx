@@ -23,4 +23,8 @@ export const GlobalStyles = createGlobalStyle<ThemeInterface>`
     text-decoration: none;
   }
   
+  h3 {
+    font-size: 24px;
+  }
+  
 `;

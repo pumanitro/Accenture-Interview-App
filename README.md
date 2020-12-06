@@ -1,6 +1,10 @@
 ## Main description
 
-Cra boilerplate to create frontend react applications.
+#### App done for Accenture interview process
+
+:warning: Requirements -> LESS | Nice to have -> styled-components
+
+I have decided to use styled-components.
 
 ## Technological stack
 
@@ -13,7 +17,6 @@ Cra boilerplate to create frontend react applications.
 - react-router
 - react-query (server-state library)
 - redux (client-state library)
-- apollo with graphql
 - eslint + prettier + husky
 
 ## TO-DO
