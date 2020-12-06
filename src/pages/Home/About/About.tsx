@@ -16,7 +16,7 @@ export const About = () => {
       <FormElement title="description">
         <Textarea placeholder="Write about your event, be creative" />
       </FormElement>
-      <FormElement title="description">
+      <FormElement title="category">
         <Dropdown
           value="fake"
           onChange={(option: string) => {
@@ -39,7 +39,7 @@ export const About = () => {
           ]}
         />
       </FormElement>
-      <FormElement title="description">
+      <FormElement title="payment">
         <RadioGroup
           value="fake"
           onChange={(option: string) => {
