@@ -4,6 +4,7 @@ import { Input } from 'components/Input/Input';
 import { FormElement } from 'components/FormElement/FormElement';
 import { Textarea } from 'components/Textarea/Textarea';
 import { Dropdown } from 'components/Dropdown/Dropdown';
+import { RadioGroup } from 'components/RadioGroup/RadioGroup';
 
 export const About = () => {
   return (
@@ -34,6 +35,25 @@ export const About = () => {
             {
               value: 'fake3',
               label: 'fake3',
+            },
+          ]}
+        />
+      </FormElement>
+      <FormElement title="description">
+        <RadioGroup
+          value="fake"
+          onChange={(option: string) => {
+            console.log('changed');
+            console.log(option);
+          }}
+          options={[
+            {
+              value: 'Free event',
+              label: 'Free event',
+            },
+            {
+              value: 'Paid event',
+              label: 'Paid event',
             },
           ]}
         />

@@ -5,7 +5,6 @@ import { ThemeProvider } from 'styled-components';
 import { CoreTheme } from './global/Themes/CoreTheme';
 import { RWDProvider } from './global/RWD';
 import { GlobalStyles } from './global/GlobalStyles/GlobalStyles';
-import { ErrorHandler } from './global/ErrorHandler/ErrorHandler';
 import { AppRouter } from './global/AppRouter/AppRouter';
 import { ReactQuery } from 'global/ReactQuery/ReactQuery';
 import { Redux } from 'global/Redux/Redux';
@@ -17,9 +16,7 @@ const App: FunctionComponent = () => (
         <ReactQuery>
           <Router>
             <GlobalStyles />
-            <ErrorHandler>
-              <AppRouter />
-            </ErrorHandler>
+            <AppRouter />
           </Router>
         </ReactQuery>
       </RWDProvider>
