@@ -1,5 +1,3 @@
-import 'antd/dist/antd.min.css';
-
 export const CoreTheme = {
   colors: {
     main: {
@@ -22,7 +20,7 @@ export const CoreTheme = {
           opacity: '28%',
         },
         light: '#FFFFFF',
-        accent: '#FAF6FF',
+        accent: '#f7f7f7',
       },
     },
     functional: {

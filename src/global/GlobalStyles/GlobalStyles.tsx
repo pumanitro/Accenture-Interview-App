@@ -16,6 +16,7 @@ export const GlobalStyles = createGlobalStyle<ThemeInterface>`
   
   body {
     color: ${props => props.theme.colors.utils.text.dark};
+    background-color: ${props => props.theme.colors.utils.background.accent};
   }
   
   a {
