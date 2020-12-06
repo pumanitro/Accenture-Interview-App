@@ -58,6 +58,11 @@ export const About = () => {
           ]}
         />
       </FormElement>
+
+      <FormElement title="reward">
+        <Input placeholder="Number" type="number" min={0} />
+        <span> reward points for attendance</span>
+      </FormElement>
     </Card>
   );
 };
