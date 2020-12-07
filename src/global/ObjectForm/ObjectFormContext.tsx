@@ -7,9 +7,9 @@ type RegisteredFieldType = {
   setValue: SetValueType;
 };
 
-export type ObjectFormContextType = {
+export type FormBagType = {
   values: any;
   registeredFields: Record<string, RegisteredFieldType[]>;
 };
 
-export const [useObjectForm, ContextProvider] = createCtx<ObjectFormContextType>();
+export const [useObjectForm, ContextProvider] = createCtx<FormBagType>();

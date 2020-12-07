@@ -8,8 +8,11 @@ export const Home: FunctionComponent = () => (
     initialValues={{
       title: '',
     }}
+    onSubmit={formBag => console.log(formBag)}
   >
     <NewEventHeader />
     <About />
+
+    <button type="submit"> Submit </button>
   </ObjectForm>
 );

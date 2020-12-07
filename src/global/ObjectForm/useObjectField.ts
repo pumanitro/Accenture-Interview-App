@@ -1,9 +1,9 @@
-import { useObjectForm, ObjectFormContextType, SetValueType } from './ObjectFormContext';
+import { useObjectForm, FormBagType, SetValueType } from './ObjectFormContext';
 import { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 // for being reactive when they are more than one field listening for a given key
-const register = (key: string, id: string, formBag: ObjectFormContextType, setValue: SetValueType) => {
+const register = (key: string, id: string, formBag: FormBagType, setValue: SetValueType) => {
   if (!formBag.registeredFields[key]) {
     formBag.registeredFields[key] = [];
   }
@@ -15,7 +15,7 @@ const register = (key: string, id: string, formBag: ObjectFormContextType, setVa
 };
 
 // to EXPLICITLY mutate core object and be reactive for hooks update
-const reactivelySetValue = (formBag: ObjectFormContextType, key: string) => {
+const reactivelySetValue = (formBag: FormBagType, key: string) => {
   return (newValue: any) => {
     formBag.registeredFields[key].forEach(registeredField => {
       registeredField.setValue(newValue);
@@ -24,7 +24,7 @@ const reactivelySetValue = (formBag: ObjectFormContextType, key: string) => {
 };
 
 // to clean up registered field when component unmounts and do not update it any more.
-const unregister = (key: string, id: string, formBag: ObjectFormContextType) => {
+const unregister = (key: string, id: string, formBag: FormBagType) => {
   formBag.registeredFields[key] = formBag.registeredFields[key].filter(registeredField => registeredField.id !== id);
 };
 

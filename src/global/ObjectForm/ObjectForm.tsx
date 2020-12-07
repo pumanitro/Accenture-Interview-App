@@ -1,10 +1,36 @@
 import React, { FC } from 'react';
-import { ContextProvider } from './ObjectFormContext';
+import { ContextProvider, FormBagType, useObjectForm } from './ObjectFormContext';
+
+type OnSubmitType = (arg: FormBagType) => void;
 
 type ObjectFormPropsType = {
   initialValues: Record<string, any>;
+  onSubmit: OnSubmitType;
 };
 
-export const ObjectForm: FC<ObjectFormPropsType> = ({ children, initialValues }) => {
-  return <ContextProvider value={{ values: initialValues, registeredFields: {} }}>{children}</ContextProvider>;
+type FormPropType = {
+  onSubmit: OnSubmitType;
+};
+
+const Form: FC<FormPropType> = ({ children, onSubmit }) => {
+  const formBag = useObjectForm();
+  return (
+    <form
+      onSubmit={e => {
+        e.preventDefault();
+        onSubmit(formBag);
+      }}
+      id={'asdasdasd'}
+    >
+      {children}
+    </form>
+  );
+};
+
+export const ObjectForm: FC<ObjectFormPropsType> = ({ children, initialValues, onSubmit }) => {
+  return (
+    <ContextProvider value={{ values: initialValues, registeredFields: {} }}>
+      <Form onSubmit={onSubmit}>{children}</Form>
+    </ContextProvider>
+  );
 };
