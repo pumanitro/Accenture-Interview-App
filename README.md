@@ -28,7 +28,7 @@ To optimize form performance and render only pieces you want to be refreshed whe
 ### Why not pure context usage?
 
 Context will refresh whole form and you would need to memoize every component.
-I could memoize them with React.children API by default but still it will require to write logic to refresh only particular fields you want and could have potential problems related with binded components.
+I could memoize them with React.children API by default but still it will require to write logic to refresh only particular fields you want and could have potential problems related with bound components.
 
 ### Why not ref usage?
 

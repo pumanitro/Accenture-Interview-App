@@ -29,7 +29,7 @@ const Form: FC<FormPropType> = ({ children, onSubmit }) => {
 
 export const ObjectForm: FC<ObjectFormPropsType> = ({ children, initialValues, onSubmit }) => {
   return (
-    <ContextProvider value={{ values: initialValues, registeredFields: {} }}>
+    <ContextProvider value={{ values: initialValues, registeredFields: {}, errors: {} }}>
       <Form onSubmit={onSubmit}>{children}</Form>
     </ContextProvider>
   );

@@ -1,13 +1,18 @@
 import React, { FC } from 'react';
-import { useObjectField } from 'global/ObjectForm/useObjectField';
 import { Input } from '../Input/Input';
+import { ObjectField, ValidateFunctionType } from 'global/ObjectForm/ObjectField';
 
 type FormInputType = {
   name: string;
+  validateFunction?: ValidateFunctionType;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
-export const FormInput: FC<FormInputType> = ({ name, ...rest }) => {
-  const { value, setValue } = useObjectField(name);
-
-  return <Input {...rest} value={value} onChange={e => setValue(e.target.value)} />;
+export const FormInput: FC<FormInputType> = ({ name, validateFunction, ...rest }) => {
+  return (
+    <ObjectField name={name} validateFunction={validateFunction}>
+      {({ value, setValue }) => {
+        return <Input {...rest} value={value} onChange={e => setValue(e.target.value)} />;
+      }}
+    </ObjectField>
+  );
 };

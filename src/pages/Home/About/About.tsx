@@ -12,7 +12,11 @@ export const About = () => {
     <Card>
       <CardTitle>About</CardTitle>
       <FormElement title="title" isRequired>
-        <FormInput placeholder="Make it short and clear" name="title" />
+        <FormInput
+          placeholder="Make it short and clear"
+          name="title"
+          validateFunction={({ values }) => !values.title && 'This field is required'}
+        />
       </FormElement>
 
       <FormElement title="title" isRequired>
