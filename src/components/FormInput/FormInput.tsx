@@ -10,8 +10,13 @@ type FormInputType = {
 export const FormInput: FC<FormInputType> = ({ name, validateFunction, ...rest }) => {
   return (
     <ObjectField name={name} validateFunction={validateFunction}>
-      {({ value, setValue }) => {
-        return <Input {...rest} value={value} onChange={e => setValue(e.target.value)} />;
+      {({ value, setValue, error }) => {
+        return (
+          <>
+            <Input {...rest} value={value} onChange={e => setValue(e.target.value)} />
+            {error}
+          </>
+        );
       }}
     </ObjectField>
   );

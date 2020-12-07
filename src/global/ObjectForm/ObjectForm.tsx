@@ -20,7 +20,6 @@ const Form: FC<FormPropType> = ({ children, onSubmit }) => {
         e.preventDefault();
         onSubmit(formBag);
       }}
-      id={'asdasdasd'}
     >
       {children}
     </form>

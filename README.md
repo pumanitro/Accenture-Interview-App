@@ -34,6 +34,8 @@ I could memoize them with React.children API by default but still it will requir
 
 Ref usage would require me to know where components value is hidden like e.g for input e.target.value and checkbox e.target.checked. Additionally, if you want to create your own custom component it can create additional abstraction layer you need to handle to connect it to form. With hooks approach you can easily manage whole state.
 
+:info: By default I am using on blur fields validation but it can be easily extended.
+
 ## Directories structure
 
 All code is under /src directory

@@ -20,7 +20,7 @@ type ObjectFieldType = {
 
 export const ObjectField: FC<ObjectFieldType> = ({ name, children, validateFunction }) => {
   const { value, setValue, formBag } = useObjectField(name);
-  const [error, setError] = useState<ErrorType>(undefined);
+  const [, setError] = useState<ErrorType>(undefined);
 
   return (
     <div
@@ -29,13 +29,18 @@ export const ObjectField: FC<ObjectFieldType> = ({ name, children, validateFunct
           return;
         }
 
-        const newErrors = validateFunction(formBag);
+        let newErrors = validateFunction(formBag);
+
+        // for having posibility to return error false
+        if (newErrors === false) {
+          newErrors = undefined;
+        }
+
         formBag.errors[name] = newErrors;
         setError(newErrors);
       }}
     >
-      {children({ value, setValue, error })}
-      <div>{error}</div>
+      {children({ value, setValue, error: formBag.errors[name] })}
     </div>
   );
 };

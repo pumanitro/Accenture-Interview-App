@@ -18,11 +18,6 @@ export const About = () => {
           validateFunction={({ values }) => !values.title && 'This field is required'}
         />
       </FormElement>
-
-      <FormElement title="title" isRequired>
-        <FormInput placeholder="Make it short and clear" name="title" />
-      </FormElement>
-
       <FormElement title="title" isRequired>
         <FormInput placeholder="Make it short and clear" name="title2" />
       </FormElement>
