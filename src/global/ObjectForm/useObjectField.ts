@@ -3,43 +3,41 @@ import { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 // for being reactive when they are more than one field listening for a given key
-const register = (key: string, id: string, formValues: ObjectFormContextType, setValue: SetValueType) => {
-  if (!formValues.registeredFields[key]) {
-    formValues.registeredFields[key] = [];
+const register = (key: string, id: string, formBag: ObjectFormContextType, setValue: SetValueType) => {
+  if (!formBag.registeredFields[key]) {
+    formBag.registeredFields[key] = [];
   }
 
-  formValues.registeredFields[key].push({
+  formBag.registeredFields[key].push({
     id,
     setValue,
   });
 };
 
 // to EXPLICITLY mutate core object and be reactive for hooks update
-const reactivelySetValue = (formValues: ObjectFormContextType, key: string) => {
+const reactivelySetValue = (formBag: ObjectFormContextType, key: string) => {
   return (newValue: any) => {
-    formValues.registeredFields[key].forEach(registeredField => {
+    formBag.registeredFields[key].forEach(registeredField => {
       registeredField.setValue(newValue);
     });
   };
 };
 
 // to clean up registered field when component unmounts and do not update it any more.
-const unregister = (key: string, id: string, formValues: ObjectFormContextType) => {
-  formValues.registeredFields[key] = formValues.registeredFields[key].filter(
-    registeredField => registeredField.id !== id
-  );
+const unregister = (key: string, id: string, formBag: ObjectFormContextType) => {
+  formBag.registeredFields[key] = formBag.registeredFields[key].filter(registeredField => registeredField.id !== id);
 };
 
-const useObjectField = (key: string) => {
-  const { values } = useObjectForm();
-  const [value, setValue] = useState(values[key]);
+export const useObjectField = (key: string) => {
+  const formBag = useObjectForm();
+  const [value, setValue] = useState(formBag.values[key]);
   const id = uuidv4();
 
   useEffect(() => {
-    return () => unregister(key, id, values);
+    return () => unregister(key, id, formBag);
   });
 
-  register(key, id, values, setValue);
+  register(key, id, formBag, setValue);
 
-  return { value, setValue: reactivelySetValue(values, key) };
+  return { value, setValue: reactivelySetValue(formBag, key) };
 };

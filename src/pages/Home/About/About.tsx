@@ -5,13 +5,22 @@ import { FormElement } from 'components/FormElement/FormElement';
 import { Textarea } from 'components/Textarea/Textarea';
 import { Dropdown } from 'components/Dropdown/Dropdown';
 import { RadioGroup } from 'components/RadioGroup/RadioGroup';
+import { FormInput } from 'components/FormInput/FormInput';
 
 export const About = () => {
   return (
     <Card>
       <CardTitle>About</CardTitle>
       <FormElement title="title" isRequired>
-        <Input placeholder="Make it short and clear" />
+        <FormInput placeholder="Make it short and clear" name="Title" />
+      </FormElement>
+
+      <FormElement title="title" isRequired>
+        <FormInput placeholder="Make it short and clear" name="Title" />
+      </FormElement>
+
+      <FormElement title="title" isRequired>
+        <FormInput placeholder="Make it short and clear" name="Title2" />
       </FormElement>
       <FormElement title="description">
         <Textarea placeholder="Write about your event, be creative" />
