@@ -36,7 +36,7 @@ export const useObjectField = (key: string) => {
 
   if (value === undefined) {
     console.warn(
-      `You haven't defined default value for ${key} field. Without it you will change uncontrolled components into controlled one.\n Keep in mind that key property is key sensitive.`
+      `You haven't defined default value for ${key} field. Without it you will change uncontrolled components into controlled one.\n Keep in mind that key property is case sensitive.`
     );
   }
 

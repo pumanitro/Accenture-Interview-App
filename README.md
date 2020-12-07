@@ -19,7 +19,20 @@ I have decided to use styled-components.
 - redux (client-state library)
 - eslint + prettier + husky
 
-## TO-DO
+## Object Form implementation
+
+### Why mutating object?
+
+To optimize form performance and render only pieces you want to be refreshed when they change.
+
+### Why not pure context usage?
+
+Context will refresh whole form and you would need to memoize every component.
+I could memoize them with React.children API by default but still it will require to write logic to refresh only particular fields you want and could have potential problems related with binded components.
+
+### Why not ref usage?
+
+Ref usage would require me to know where components value is hidden like e.g for input e.target.value and checkbox e.target.checked. Additionally, if you want to create your own custom component it can create additional abstraction layer you need to handle to connect it to form. With hooks approach you can easily manage whole state.
 
 ## Directories structure
 
