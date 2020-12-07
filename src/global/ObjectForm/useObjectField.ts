@@ -19,6 +19,7 @@ const reactivelySetValue = (formBag: FormBagType, key: string) => {
   return (newValue: any) => {
     formBag.registeredFields[key].forEach(registeredField => {
       registeredField.setValue(newValue);
+      formBag.values[key] = newValue;
     });
   };
 };
@@ -32,6 +33,12 @@ export const useObjectField = (key: string) => {
   const formBag = useObjectForm();
   const [value, setValue] = useState(formBag.values[key]);
   const id = uuidv4();
+
+  if (value === undefined) {
+    console.warn(
+      `You haven't defined default value for ${key} field. Without it you will change uncontrolled components into controlled one.\n Keep in mind that key property is key sensitive.`
+    );
+  }
 
   useEffect(() => {
     return () => unregister(key, id, formBag);

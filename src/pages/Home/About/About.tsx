@@ -12,15 +12,15 @@ export const About = () => {
     <Card>
       <CardTitle>About</CardTitle>
       <FormElement title="title" isRequired>
-        <FormInput placeholder="Make it short and clear" name="Title" />
+        <FormInput placeholder="Make it short and clear" name="title" />
       </FormElement>
 
       <FormElement title="title" isRequired>
-        <FormInput placeholder="Make it short and clear" name="Title" />
+        <FormInput placeholder="Make it short and clear" name="title" />
       </FormElement>
 
       <FormElement title="title" isRequired>
-        <FormInput placeholder="Make it short and clear" name="Title2" />
+        <FormInput placeholder="Make it short and clear" name="title2" />
       </FormElement>
       <FormElement title="description">
         <Textarea placeholder="Write about your event, be creative" />
