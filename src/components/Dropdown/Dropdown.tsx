@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { StyledSelect } from './Dropdown.s';
 
 export type Option = {
   value: string;
@@ -13,12 +14,12 @@ type DropdownPropTypes = {
 
 export const Dropdown: FC<DropdownPropTypes> = ({ options, value, onChange }) => {
   return (
-    <select value={value} onChange={e => onChange(e.target.value)}>
+    <StyledSelect value={value} onChange={e => onChange(e.target.value)}>
       {options.map(option => (
         <option key={option.value} value={option.value}>
           {option.label}
         </option>
       ))}
-    </select>
+    </StyledSelect>
   );
 };
