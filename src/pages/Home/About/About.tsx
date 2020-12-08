@@ -2,11 +2,11 @@ import React from 'react';
 import { CardTitle, Card } from 'components/Card/Card.s';
 import { Input } from 'components/Input/Input';
 import { FormElement } from 'components/FormElement/FormElement';
-import { RadioGroup } from 'components/RadioGroup/RadioGroup';
 import { FormInput } from 'components/FormInput/FormInput';
 import { isRequired } from 'helpers/formValidations';
 import { FormTextarea } from 'components/FormTextarea/FormTextarea';
 import { FormDropdown } from 'components/FormDropdown/FormDropdown';
+import { FormRadioGroup } from 'components/FormRadioGroup/FormRadioGroup';
 
 export const About = () => {
   return (
@@ -45,12 +45,8 @@ export const About = () => {
         />
       </FormElement>
       <FormElement title="payment">
-        <RadioGroup
-          value="fake"
-          onChange={(option: string) => {
-            console.log('changed');
-            console.log(option);
-          }}
+        <FormRadioGroup
+          name="payment"
           options={[
             {
               value: 'Free event',
