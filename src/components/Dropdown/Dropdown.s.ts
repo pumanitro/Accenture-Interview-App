@@ -5,6 +5,7 @@ export const StyledSelect = styled.select`
   ${StyledFormElement};
   height: 32px;
 
+  padding: 0 32px 0 12px;
   appearance: none;
   background-color: #fff;
   /* note: bg image below uses 2 urls. The first is an svg data uri for the arrow icon, and the second is the gradient. 

@@ -8,6 +8,7 @@ export const Home: FunctionComponent = () => (
     initialValues={{
       title: '',
       description: '',
+      category: '',
     }}
     onSubmit={formBag => console.log(formBag)}
   >

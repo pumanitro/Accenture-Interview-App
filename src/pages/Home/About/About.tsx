@@ -2,11 +2,11 @@ import React from 'react';
 import { CardTitle, Card } from 'components/Card/Card.s';
 import { Input } from 'components/Input/Input';
 import { FormElement } from 'components/FormElement/FormElement';
-import { Dropdown } from 'components/Dropdown/Dropdown';
 import { RadioGroup } from 'components/RadioGroup/RadioGroup';
 import { FormInput } from 'components/FormInput/FormInput';
 import { isRequired } from 'helpers/formValidations';
 import { FormTextarea } from 'components/FormTextarea/FormTextarea';
+import { FormDropdown } from 'components/FormDropdown/FormDropdown';
 
 export const About = () => {
   return (
@@ -24,13 +24,10 @@ export const About = () => {
           validateFunction={isRequired}
         />
       </FormElement>
+
       <FormElement title="category">
-        <Dropdown
-          value="fake"
-          onChange={(option: string) => {
-            console.log('changed');
-            console.log(option);
-          }}
+        <FormDropdown
+          name="category"
           options={[
             {
               value: 'fake',

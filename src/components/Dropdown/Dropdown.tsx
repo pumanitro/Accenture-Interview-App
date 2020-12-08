@@ -1,5 +1,6 @@
-import React, { FC } from 'react';
+import React, { FC, ChangeEvent } from 'react';
 import { StyledSelect } from './Dropdown.s';
+import { StyledFormElementPropsType } from '../Input/Input.s';
 
 export type Option = {
   value: string;
@@ -9,12 +10,12 @@ export type Option = {
 type DropdownPropTypes = {
   options: Option[];
   value: string;
-  onChange: (value: string) => void;
-};
+  onChange: (e: ChangeEvent<HTMLSelectElement>) => void;
+} & StyledFormElementPropsType;
 
 export const Dropdown: FC<DropdownPropTypes> = ({ options, value, onChange }) => {
   return (
-    <StyledSelect value={value} onChange={e => onChange(e.target.value)}>
+    <StyledSelect value={value} onChange={onChange}>
       {options.map(option => (
         <option key={option.value} value={option.value}>
           {option.label}
