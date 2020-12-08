@@ -1,5 +1,3 @@
-import styled from 'styled-components';
+import { StyledInput } from './Input.s';
 
-export const Input = styled.input`
-  border: 1px solid ${props => props.theme.colors.utils.border.mid};
-`;
+export const Input = StyledInput;

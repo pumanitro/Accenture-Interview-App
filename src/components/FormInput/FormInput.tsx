@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { Input } from '../Input/Input';
 import { ObjectField, ValidateFunctionType } from 'global/ObjectForm/ObjectField';
+import { Input } from 'components/Input/Input';
 
 type FormInputType = {
   name: string;

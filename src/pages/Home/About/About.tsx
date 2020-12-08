@@ -6,17 +6,14 @@ import { Textarea } from 'components/Textarea/Textarea';
 import { Dropdown } from 'components/Dropdown/Dropdown';
 import { RadioGroup } from 'components/RadioGroup/RadioGroup';
 import { FormInput } from 'components/FormInput/FormInput';
+import { isRequired } from 'helpers/formValidations';
 
 export const About = () => {
   return (
     <Card>
       <CardTitle>About</CardTitle>
       <FormElement title="title" isRequired>
-        <FormInput
-          placeholder="Make it short and clear"
-          name="title"
-          validateFunction={({ values }) => !values.title && 'This field is required'}
-        />
+        <FormInput placeholder="Make it short and clear" name="title" validateFunction={isRequired} />
       </FormElement>
       <FormElement title="title" isRequired>
         <FormInput placeholder="Make it short and clear" name="title2" />
