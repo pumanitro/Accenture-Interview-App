@@ -1,6 +1,5 @@
 import React from 'react';
 import { CardTitle, Card } from 'components/Card/Card.s';
-import { Input } from 'components/Input/Input';
 import { FormElement } from 'components/FormElement/FormElement';
 import { FormInput } from 'components/FormInput/FormInput';
 import { isRequired } from 'helpers/formValidations';
@@ -61,7 +60,7 @@ export const About = () => {
       </FormElement>
 
       <FormElement title="reward">
-        <Input placeholder="Number" type="number" min={0} />
+        <FormInput placeholder="Number" type="number" min={0} name="reward" />
         <span> reward points for attendance</span>
       </FormElement>
     </Card>

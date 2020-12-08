@@ -10,6 +10,7 @@ export const Home: FunctionComponent = () => (
       description: '',
       category: '',
       payment: 'Free event',
+      reward: '0',
     }}
     onSubmit={formBag => console.log(formBag)}
   >
