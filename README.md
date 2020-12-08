@@ -6,6 +6,10 @@
 
 I have decided to use styled-components.
 
+#### Styling
+
+I wasn't able to make it pixel and color perfect due to low image resolution.
+
 ## Technological stack
 
 - ant-design

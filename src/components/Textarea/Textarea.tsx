@@ -1,5 +1,7 @@
 import styled from 'styled-components';
+import { StyledFormElement } from 'components/Input/Input.s';
 
 export const Textarea = styled.textarea`
-  border: 1px solid ${props => props.theme.colors.utils.border.mid};
+  ${StyledFormElement}
+  resize: none;
 `;

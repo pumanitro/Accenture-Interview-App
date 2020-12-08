@@ -15,7 +15,7 @@ export const FormInput: FC<FormInputType> = ({ name, validateFunction, ...rest }
         return (
           <>
             <GlobalErrorMessage message={error}>
-              <Input {...rest} value={value} onChange={e => setValue(e.target.value)} />
+              <Input {...rest} value={value} onChange={e => setValue(e.target.value)} hasError={!!error} />
             </GlobalErrorMessage>
           </>
         );

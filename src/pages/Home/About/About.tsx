@@ -15,11 +15,8 @@ export const About = () => {
       <FormElement title="title" isRequired>
         <FormInput placeholder="Make it short and clear" name="title" validateFunction={isRequired} />
       </FormElement>
-      <FormElement title="title" isRequired>
-        <FormInput placeholder="Make it short and clear" name="title2" />
-      </FormElement>
       <FormElement title="description">
-        <Textarea placeholder="Write about your event, be creative" />
+        <Textarea rows={4} placeholder="Write about your event, be creative" />
       </FormElement>
       <FormElement title="category">
         <Dropdown
