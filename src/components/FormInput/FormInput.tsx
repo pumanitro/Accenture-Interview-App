@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { ObjectField, ValidateFunctionType } from 'global/ObjectForm/ObjectField';
 import { Input } from 'components/Input/Input';
+import { GlobalErrorMessage } from 'components/GlobalErrorMessage/GlobalErrorMessage';
 
 type FormInputType = {
   name: string;
@@ -13,8 +14,9 @@ export const FormInput: FC<FormInputType> = ({ name, validateFunction, ...rest }
       {({ value, setValue, error }) => {
         return (
           <>
-            <Input {...rest} value={value} onChange={e => setValue(e.target.value)} />
-            {error}
+            <GlobalErrorMessage message={error}>
+              <Input {...rest} value={value} onChange={e => setValue(e.target.value)} />
+            </GlobalErrorMessage>
           </>
         );
       }}
