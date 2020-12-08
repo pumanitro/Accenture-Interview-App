@@ -10,12 +10,18 @@ export type Option = {
 type DropdownPropTypes = {
   options: Option[];
   value: string;
+  placeholder?: string;
   onChange: (e: ChangeEvent<HTMLSelectElement>) => void;
 } & StyledFormElementPropsType;
 
-export const Dropdown: FC<DropdownPropTypes> = ({ options, value, onChange }) => {
+export const Dropdown: FC<DropdownPropTypes> = ({ options, value, onChange, placeholder }) => {
   return (
     <StyledSelect value={value} onChange={onChange}>
+      {placeholder && (
+        <option value="" hidden>
+          {placeholder}
+        </option>
+      )}
       {options.map(option => (
         <option key={option.value} value={option.value}>
           {option.label}

@@ -41,6 +41,7 @@ export const About = () => {
               label: 'fake3',
             },
           ]}
+          placeholder="Select category"
         />
       </FormElement>
       <FormElement title="payment">
