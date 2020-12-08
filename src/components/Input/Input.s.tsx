@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-type StyledFormElementPropsType = {
+export type StyledFormElementPropsType = {
   hasError?: boolean;
 };
 

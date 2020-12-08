@@ -10,7 +10,7 @@ type FieldBagType = {
   error: ErrorType;
 };
 
-export type ValidateFunctionType = ((formBag: FormBagType) => ErrorType) | undefined;
+export type ValidateFunctionType = ((formBag: FormBagType, name: string) => ErrorType) | undefined;
 
 type ObjectFieldType = {
   name: string;
@@ -29,7 +29,7 @@ export const ObjectField: FC<ObjectFieldType> = ({ name, children, validateFunct
           return;
         }
 
-        let newErrors = validateFunction(formBag);
+        let newErrors = validateFunction(formBag, name);
 
         // for having posibility to return error false
         if (newErrors === false) {

@@ -7,7 +7,7 @@ export const Home: FunctionComponent = () => (
   <ObjectForm
     initialValues={{
       title: '',
-      title2: '',
+      description: '',
     }}
     onSubmit={formBag => console.log(formBag)}
   >
