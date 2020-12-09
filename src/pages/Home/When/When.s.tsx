@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { FormInput } from 'components/FormInput/FormInput';
+import { StyledFormElement } from 'components/Input/Input.s';
 
 export const StyledAt = styled.span`
   margin: 0 12px;
@@ -11,6 +12,8 @@ export const RadioGroupWrapper = styled.span`
 `;
 
 const RemoveFieldIcon = css`
+  ${StyledFormElement}
+
   // removes icon from date and time inputs
   &::-webkit-calendar-picker-indicator {
     background: transparent;

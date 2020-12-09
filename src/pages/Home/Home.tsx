@@ -14,6 +14,7 @@ export const Home: FunctionComponent = () => (
       description: '',
       category: '',
       payment: 'Free event',
+      fee: '',
       reward: '',
       responsible: '',
       email: '',

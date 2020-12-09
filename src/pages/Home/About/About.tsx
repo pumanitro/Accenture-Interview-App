@@ -7,6 +7,7 @@ import { FormTextarea } from 'components/FormTextarea/FormTextarea';
 import { FormDropdown } from 'components/FormDropdown/FormDropdown';
 import { FormRadioGroup } from 'components/FormRadioGroup/FormRadioGroup';
 import { CenteredWrapper, NumberFieldText } from './About.s';
+import { Fee } from './Fee/Fee';
 
 export const About = () => {
   return (
@@ -46,19 +47,22 @@ export const About = () => {
         />
       </FormElement>
       <FormElement title="payment">
-        <FormRadioGroup
-          name="payment"
-          options={[
-            {
-              value: 'Free event',
-              label: 'Free event',
-            },
-            {
-              value: 'Paid event',
-              label: 'Paid event',
-            },
-          ]}
-        />
+        <CenteredWrapper>
+          <FormRadioGroup
+            name="payment"
+            options={[
+              {
+                value: 'Free event',
+                label: 'Free event',
+              },
+              {
+                value: 'Paid event',
+                label: 'Paid event',
+              },
+            ]}
+          />
+          <Fee />
+        </CenteredWrapper>
       </FormElement>
 
       <FormElement title="reward">
