@@ -6,7 +6,7 @@ export const CoreTheme = {
     utils: {
       text: {
         dark: '#1c3b67',
-        light: '#ECEEF1',
+        light: '#b2ccde',
       },
       border: {
         mid: '#e9e9e9',
@@ -15,10 +15,7 @@ export const CoreTheme = {
       link: '#3C7EFF',
       placeholder: '#959595',
       background: {
-        mid: {
-          color: '#000',
-          opacity: '28%',
-        },
+        mid: '#35588e',
         light: '#FFFFFF',
         accent: '#f7f7f7',
       },
