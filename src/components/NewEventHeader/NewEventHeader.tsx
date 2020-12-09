@@ -1,4 +1,10 @@
 import React from 'react';
-import { StyledHeader } from './NewEventHeader.s';
+import { StyledHeading, HeaderWrapper, StyledAppWrapper } from './NewEventHeader.s';
 
-export const NewEventHeader = () => <StyledHeader>New event</StyledHeader>;
+export const NewEventHeader = () => (
+  <HeaderWrapper>
+    <StyledAppWrapper>
+      <StyledHeading>New event</StyledHeading>
+    </StyledAppWrapper>
+  </HeaderWrapper>
+);

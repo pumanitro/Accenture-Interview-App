@@ -1,10 +1,18 @@
 import styled from 'styled-components';
+import { AppWrapperStyles } from '../AppWrapper/AppWrapepr.s';
 
-export const StyledHeader = styled.h1`
+export const HeaderWrapper = styled.div`
   border-top: 16px solid ${props => props.theme.colors.utils.text.dark};
-  margin: 0;
-  padding: 24px;
   font-weight: 300;
-  color: ${props => props.theme.colors.utils.text.light};
   background-color: ${props => props.theme.colors.utils.background.mid};
+`;
+
+export const StyledHeading = styled.h1`
+  padding: 24px;
+  margin: 0;
+  color: ${props => props.theme.colors.utils.text.light};
+`;
+
+export const StyledAppWrapper = styled(AppWrapperStyles)`
+  justify-content: flex-start;
 `;
