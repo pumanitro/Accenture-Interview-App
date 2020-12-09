@@ -2,7 +2,7 @@ import React from 'react';
 import { CardTitle, Card } from 'components/Card/Card.s';
 import { FormElement } from 'components/FormElement/FormElement';
 import { FormInput } from 'components/FormInput/FormInput';
-import { isRequired } from 'helpers/formValidations';
+import { isValidEmail } from 'helpers/formValidations';
 import { FormDropdown } from 'components/FormDropdown/FormDropdown';
 
 export const Coordinator = () => {
@@ -32,7 +32,7 @@ export const Coordinator = () => {
       </FormElement>
 
       <FormElement title="email">
-        <FormInput placeholder="Email" name="email" validateFunction={isRequired} />
+        <FormInput placeholder="Email" name="email" validateFunction={isValidEmail} />
       </FormElement>
     </Card>
   );
