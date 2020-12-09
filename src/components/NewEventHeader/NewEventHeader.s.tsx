@@ -5,6 +5,7 @@ export const HeaderWrapper = styled.div`
   border-top: 16px solid ${props => props.theme.colors.utils.text.dark};
   font-weight: 300;
   background-color: ${props => props.theme.colors.utils.background.mid};
+  margin-bottom: 40px;
 `;
 
 export const StyledHeading = styled.h1`
@@ -14,5 +15,5 @@ export const StyledHeading = styled.h1`
 `;
 
 export const StyledAppWrapper = styled(AppWrapperStyles)`
-  justify-content: flex-start;
+  align-items: flex-start;
 `;

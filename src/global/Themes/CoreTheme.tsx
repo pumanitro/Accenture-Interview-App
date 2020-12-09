@@ -11,6 +11,7 @@ export const CoreTheme = {
       border: {
         mid: '#e9e9e9',
         dark: '#929292',
+        shadow: '#b8b8b8',
       },
       link: '#3C7EFF',
       placeholder: '#959595',

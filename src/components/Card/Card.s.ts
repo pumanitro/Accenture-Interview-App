@@ -5,6 +5,10 @@ export const Card = styled.div`
   padding: 12px 24px;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  margin-bottom: 24px;
+
+  box-shadow: 1px 1px 8px ${props => props.theme.colors.utils.border.shadow};
 `;
 
 export const CardTitle = styled.h3`
