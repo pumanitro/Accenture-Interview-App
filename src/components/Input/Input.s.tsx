@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 export type StyledFormElementPropsType = {
   hasError?: boolean;
+  width?: string;
 };
 
 export const StyledFormElement = css<StyledFormElementPropsType>`
@@ -9,7 +10,7 @@ export const StyledFormElement = css<StyledFormElementPropsType>`
   padding: 0 12px;
   border: 1px solid
     ${props => (props.hasError ? props.theme.colors.functional.error : props.theme.colors.utils.border.mid)};
-  width: 100%;
+  width: ${props => (props.width ? props.width : '100%')};
 
   box-sizing: border-box;
 `;

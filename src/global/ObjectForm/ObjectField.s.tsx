@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
-export const ObjectFieldWrapper = styled.div`
-  width: 100%;
+type ObjectFieldWrapperType = {
+  width?: string;
+};
+
+export const ObjectFieldWrapper = styled.div<ObjectFieldWrapperType>`
+  width: ${props => (props.width ? props.width : '100%')};
 `;

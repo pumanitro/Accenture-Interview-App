@@ -5,3 +5,11 @@ export const RadioGroupWrapper = styled.div`
   display: flex;
   flex-direction: row;
 `;
+
+export const RadioGroupElementWrapper = styled.div`
+  padding-right: 12px;
+`;
+
+export const StyledRadioLabel = styled.label`
+  margin-left: 4px;
+`;

@@ -15,16 +15,18 @@ export type ValidateFunctionType = ((formBag: FormBagType, name: string) => Erro
 
 type ObjectFieldType = {
   name: string;
+  width?: string;
   validateFunction?: ValidateFunctionType;
   children: (arg: FieldBagType) => React.ReactNode;
 };
 
-export const ObjectField: FC<ObjectFieldType> = ({ name, children, validateFunction }) => {
+export const ObjectField: FC<ObjectFieldType> = ({ name, children, validateFunction, width }) => {
   const { value, setValue, formBag } = useObjectField(name);
   const [, setError] = useState<ErrorType>(undefined);
 
   return (
     <ObjectFieldWrapper
+      width={width}
       onBlur={() => {
         if (!validateFunction) {
           return;

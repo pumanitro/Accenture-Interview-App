@@ -1,9 +1,16 @@
 import styled from 'styled-components';
 
-export const ErrorTooltip = styled.div`
+type ErrorTooltipType = {
+  width?: string;
+};
+
+export const ErrorTooltip = styled.div<ErrorTooltipType>`
   position: relative;
   display: inline-block;
-  width: 100%;
+  width: ${props => {
+    console.log(props.width);
+    return props.width ? props.width : '100%';
+  }};
 `;
 
 export const ErrorTooltipText = styled.span`
@@ -16,7 +23,7 @@ export const ErrorTooltipText = styled.span`
   position: absolute;
   z-index: 1;
   top: 0px;
-  left: 110%;
+  left: calc(100% + 10px);
 
   // arrow
   &::after {

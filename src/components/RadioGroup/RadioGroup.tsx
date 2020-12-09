@@ -1,7 +1,7 @@
 import { Option } from '../Dropdown/Dropdown';
 import React, { FC } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { RadioGroupWrapper } from './RadioGroup.s';
+import { RadioGroupWrapper, RadioGroupElementWrapper, StyledRadioLabel } from './RadioGroup.s';
 import { StyledFormElementPropsType } from '../Input/Input.s';
 
 type RadioGroupPropsType = {
@@ -16,7 +16,7 @@ export const RadioGroup: FC<RadioGroupPropsType> = ({ options, value, onChange }
   return (
     <RadioGroupWrapper>
       {options.map(option => (
-        <div key={id + option.value}>
+        <RadioGroupElementWrapper key={id + option.value}>
           <input
             type="radio"
             id={id + option.value}
@@ -25,8 +25,8 @@ export const RadioGroup: FC<RadioGroupPropsType> = ({ options, value, onChange }
             checked={option.value === value}
             onChange={() => onChange(option.value)}
           />
-          <label htmlFor={id + option.value}>{option.label}</label>
-        </div>
+          <StyledRadioLabel htmlFor={id + option.value}>{option.label}</StyledRadioLabel>
+        </RadioGroupElementWrapper>
       ))}
     </RadioGroupWrapper>
   );

@@ -4,11 +4,12 @@ import { FormElementWrapper, StyledOverline } from './FormElement.s';
 type FormElementPropsType = {
   title: string;
   isRequired?: boolean;
+  className?: string;
 };
 
-export const FormElement: FC<FormElementPropsType> = ({ title, isRequired = false, children }) => {
+export const FormElement: FC<FormElementPropsType> = ({ title, isRequired = false, children, className }) => {
   return (
-    <FormElementWrapper>
+    <FormElementWrapper className={className}>
       <StyledOverline>
         {title}
         {isRequired && '*'}

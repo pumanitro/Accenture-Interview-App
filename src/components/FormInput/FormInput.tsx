@@ -5,17 +5,24 @@ import { GlobalErrorMessage } from 'components/GlobalErrorMessage/GlobalErrorMes
 
 type FormInputType = {
   name: string;
+  width?: string;
   validateFunction?: ValidateFunctionType;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
-export const FormInput: FC<FormInputType> = ({ name, validateFunction, ...rest }) => {
+export const FormInput: FC<FormInputType> = ({ name, width, validateFunction, ...rest }) => {
   return (
-    <ObjectField name={name} validateFunction={validateFunction}>
+    <ObjectField name={name} validateFunction={validateFunction} width={width}>
       {({ value, setValue, error }) => {
         return (
           <>
-            <GlobalErrorMessage message={error}>
-              <Input {...rest} value={value} onChange={e => setValue(e.target.value)} hasError={!!error} />
+            <GlobalErrorMessage message={error} width={width}>
+              <Input
+                {...rest}
+                value={value}
+                onChange={e => setValue(e.target.value)}
+                hasError={!!error}
+                width={width}
+              />
             </GlobalErrorMessage>
           </>
         );

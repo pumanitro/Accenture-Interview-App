@@ -7,8 +7,10 @@ export const FormElementWrapper = styled.div`
   justify-content: flex-start;
 
   padding-right: 320px;
+  padding-bottom: 12px;
 `;
 
 export const StyledOverline = styled(Overline)`
-  width: 240px;
+  // for all ovelines to be at the same end line |
+  min-width: 160px;
 `;
