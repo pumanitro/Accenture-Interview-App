@@ -7,10 +7,7 @@ type ErrorTooltipType = {
 export const ErrorTooltip = styled.div<ErrorTooltipType>`
   position: relative;
   display: inline-block;
-  width: ${props => {
-    console.log(props.width);
-    return props.width ? props.width : '100%';
-  }};
+  width: ${props => (props.width ? props.width : '100%')};
 `;
 
 export const ErrorTooltipText = styled.span`

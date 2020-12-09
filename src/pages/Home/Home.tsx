@@ -3,6 +3,7 @@ import { NewEventHeader } from 'components/NewEventHeader/NewEventHeader';
 import { About } from './About/About';
 import { ObjectForm } from 'global/ObjectForm/ObjectForm';
 import { AppWrapper } from 'components/AppWrapper/AppWrapper';
+import { Coordinator } from './Coordinator/Coordinator';
 
 export const Home: FunctionComponent = () => (
   <ObjectForm
@@ -12,6 +13,8 @@ export const Home: FunctionComponent = () => (
       category: '',
       payment: 'Free event',
       reward: '',
+      responsible: '',
+      email: '',
     }}
     onSubmit={formBag => console.log(formBag)}
   >
@@ -19,6 +22,7 @@ export const Home: FunctionComponent = () => (
 
     <AppWrapper>
       <About />
+      <Coordinator />
       <button type="submit"> Submit </button>
     </AppWrapper>
   </ObjectForm>
