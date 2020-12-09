@@ -1,6 +1,7 @@
 import React, { FC, useState } from 'react';
 import { useObjectField } from './useObjectField';
 import { FormBagType, SetValueType } from './ObjectFormContext';
+import { ObjectFieldWrapper } from './ObjectField.s';
 
 export type ErrorType = string | undefined | false;
 
@@ -23,7 +24,7 @@ export const ObjectField: FC<ObjectFieldType> = ({ name, children, validateFunct
   const [, setError] = useState<ErrorType>(undefined);
 
   return (
-    <div
+    <ObjectFieldWrapper
       onBlur={() => {
         if (!validateFunction) {
           return;
@@ -41,6 +42,6 @@ export const ObjectField: FC<ObjectFieldType> = ({ name, children, validateFunct
       }}
     >
       {children({ value, setValue, error: formBag.errors[name] })}
-    </div>
+    </ObjectFieldWrapper>
   );
 };

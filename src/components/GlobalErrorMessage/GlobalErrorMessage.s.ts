@@ -3,10 +3,11 @@ import styled from 'styled-components';
 export const ErrorTooltip = styled.div`
   position: relative;
   display: inline-block;
+  width: 100%;
 `;
 
 export const ErrorTooltipText = styled.span`
-  width: 200px;
+  width: 240px;
   background-color: ${props => props.theme.colors.functional.error};
   color: #fff;
   text-align: center;

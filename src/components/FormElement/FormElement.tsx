@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
-import { Overline } from '../Overline/Overline.s';
-import { FormElementWrapper } from './FormElement.s';
+import { FormElementWrapper, StyledOverline } from './FormElement.s';
 
 type FormElementPropsType = {
   title: string;
@@ -10,10 +9,10 @@ type FormElementPropsType = {
 export const FormElement: FC<FormElementPropsType> = ({ title, isRequired = false, children }) => {
   return (
     <FormElementWrapper>
-      <Overline>
+      <StyledOverline>
         {title}
         {isRequired && '*'}
-      </Overline>
+      </StyledOverline>
       {children}
     </FormElementWrapper>
   );

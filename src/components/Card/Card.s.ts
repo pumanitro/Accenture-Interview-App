@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Card = styled.div`
   background-color: ${props => props.theme.colors.utils.background.light};
-  padding: 12px 24px;
+  padding: 12px 32px;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -13,4 +13,6 @@ export const Card = styled.div`
 
 export const CardTitle = styled.h3`
   border-bottom: 1px solid ${props => props.theme.colors.utils.border.mid};
+  margin-top: 10px;
+  padding-bottom: 12px;
 `;

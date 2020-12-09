@@ -9,6 +9,9 @@ export const StyledFormElement = css<StyledFormElementPropsType>`
   padding: 0 12px;
   border: 1px solid
     ${props => (props.hasError ? props.theme.colors.functional.error : props.theme.colors.utils.border.mid)};
+  width: 100%;
+
+  box-sizing: border-box;
 `;
 
 export const StyledInput = styled.input`
