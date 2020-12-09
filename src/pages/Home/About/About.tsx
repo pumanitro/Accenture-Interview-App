@@ -6,6 +6,7 @@ import { isRequired } from 'helpers/formValidations';
 import { FormTextarea } from 'components/FormTextarea/FormTextarea';
 import { FormDropdown } from 'components/FormDropdown/FormDropdown';
 import { FormRadioGroup } from 'components/FormRadioGroup/FormRadioGroup';
+import { RewardWrapper, StyledRewardText } from './About.s';
 
 export const About = () => {
   return (
@@ -61,8 +62,10 @@ export const About = () => {
       </FormElement>
 
       <FormElement title="reward">
-        <FormInput width="120px" placeholder="Number" type="number" min={0} name="reward" />
-        <span> reward points for attendance</span>
+        <RewardWrapper>
+          <FormInput width="120px" placeholder="Number" type="number" min={0} name="reward" />
+          <StyledRewardText> reward points for attendance</StyledRewardText>
+        </RewardWrapper>
       </FormElement>
     </Card>
   );
