@@ -11,7 +11,7 @@ export const HeaderWrapper = styled.div`
 export const StyledHeading = styled.h1`
   padding: 24px;
   margin: 0;
-  color: ${props => props.theme.colors.utils.text.light};
+  color: ${props => props.theme.colors.utils.text.mid};
 `;
 
 export const StyledAppWrapper = styled(AppWrapperStyles)`

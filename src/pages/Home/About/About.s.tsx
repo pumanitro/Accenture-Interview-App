@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-export const RewardWrapper = styled.div`
+export const CenteredWrapper = styled.div`
   display: flex;
   align-items: center;
 `;
 
-export const StyledRewardText = styled.span`
+export const NumberFieldText = styled.span`
   margin-left: 12px;
 `;

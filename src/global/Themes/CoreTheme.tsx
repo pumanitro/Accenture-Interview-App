@@ -1,12 +1,13 @@
 export const CoreTheme = {
   colors: {
     main: {
-      primary: '#4E2683',
+      primary: '#f88f21',
     },
     utils: {
       text: {
         dark: '#1c3b67',
-        light: '#b2ccde',
+        mid: '#b2ccde',
+        light: '#ffffff',
       },
       border: {
         mid: '#e9e9e9',

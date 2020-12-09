@@ -4,6 +4,8 @@ import { About } from './About/About';
 import { ObjectForm } from 'global/ObjectForm/ObjectForm';
 import { AppWrapper } from 'components/AppWrapper/AppWrapper';
 import { Coordinator } from './Coordinator/Coordinator';
+import { When } from './When/When';
+import { PublishButton } from './Home.s';
 
 export const Home: FunctionComponent = () => (
   <ObjectForm
@@ -15,6 +17,9 @@ export const Home: FunctionComponent = () => (
       reward: '',
       responsible: '',
       email: '',
+      date: '',
+      time: '',
+      amOrPm: 'AM',
     }}
     onSubmit={formBag => console.log(formBag)}
   >
@@ -23,7 +28,8 @@ export const Home: FunctionComponent = () => (
     <AppWrapper>
       <About />
       <Coordinator />
-      <button type="submit"> Submit </button>
+      <When />
+      <PublishButton type="submit"> PUBLISH EVENT </PublishButton>
     </AppWrapper>
   </ObjectForm>
 );
