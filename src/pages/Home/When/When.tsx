@@ -3,8 +3,9 @@ import { CardTitle, Card } from 'components/Card/Card.s';
 import { FormElement } from 'components/FormElement/FormElement';
 import { FormInput } from 'components/FormInput/FormInput';
 import { isRequired } from 'helpers/formValidations';
-import { FormRadioGroup } from '../../../components/FormRadioGroup/FormRadioGroup';
+import { FormRadioGroup } from 'components/FormRadioGroup/FormRadioGroup';
 import { CenteredWrapper, NumberFieldText } from '../About/About.s';
+import { DateFormField, RadioGroupWrapper, StyledAt, TimeFormField } from './When.s';
 
 export const When = () => {
   return (
@@ -13,28 +14,30 @@ export const When = () => {
 
       <FormElement title="starts on" isRequired>
         <CenteredWrapper>
-          <FormInput type="date" name="date" validateFunction={isRequired} />
-          <span> at </span>
-          <FormInput type="time" name="time" validateFunction={isRequired} />
-          <FormRadioGroup
-            name="amOrPm"
-            options={[
-              {
-                value: 'AM',
-                label: 'AM',
-              },
-              {
-                value: 'PM',
-                label: 'PM',
-              },
-            ]}
-          />
+          <DateFormField type="date" name="date" validateFunction={isRequired} />
+          <StyledAt> at </StyledAt>
+          <TimeFormField type="time" name="time" min="00:00" max="12:00" validateFunction={isRequired} />
+          <RadioGroupWrapper>
+            <FormRadioGroup
+              name="amOrPm"
+              options={[
+                {
+                  value: 'AM',
+                  label: 'AM',
+                },
+                {
+                  value: 'PM',
+                  label: 'PM',
+                },
+              ]}
+            />
+          </RadioGroupWrapper>
         </CenteredWrapper>
       </FormElement>
 
-      <FormElement title="reward">
+      <FormElement title="duration">
         <CenteredWrapper>
-          <FormInput width="120px" placeholder="Number" type="number" min={0} name="reward" />
+          <FormInput width="120px" placeholder="Number" type="number" min={0} name="duration" />
           <NumberFieldText> hour</NumberFieldText>
         </CenteredWrapper>
       </FormElement>

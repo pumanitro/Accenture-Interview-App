@@ -20,6 +20,7 @@ export const Home: FunctionComponent = () => (
       date: '',
       time: '',
       amOrPm: 'AM',
+      duration: '',
     }}
     onSubmit={formBag => console.log(formBag)}
   >
