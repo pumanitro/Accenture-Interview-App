@@ -1,7 +1,7 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import { answersSlice } from './Slices/answersSlice';
+import { categorySlice } from './Slices/categorySlice';
 
-const rootReducer = combineReducers({ answers: answersSlice.reducer });
+const rootReducer = combineReducers({ categories: categorySlice.reducer });
 
 export type RootState = ReturnType<typeof rootReducer>;
 

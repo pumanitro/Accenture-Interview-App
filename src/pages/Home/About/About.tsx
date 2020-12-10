@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { CardTitle, Card } from 'components/Card/Card.s';
 import { FormElement } from 'components/FormElement/FormElement';
 import { FormInput } from 'components/FormInput/FormInput';
@@ -8,8 +8,13 @@ import { FormDropdown } from 'components/FormDropdown/FormDropdown';
 import { FormRadioGroup } from 'components/FormRadioGroup/FormRadioGroup';
 import { CenteredWrapper, NumberFieldText } from './About.s';
 import { Fee } from './Fee/Fee';
+import { store } from '../../../global/Redux/Redux';
+import { fetchCategories } from 'global/Redux/Slices/categorySlice';
 
 export const About = () => {
+  useEffect(() => {
+    store.dispatch(fetchCategories());
+  }, []);
   return (
     <Card>
       <CardTitle>About</CardTitle>

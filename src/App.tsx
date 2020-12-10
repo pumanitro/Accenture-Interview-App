@@ -6,19 +6,16 @@ import { CoreTheme } from './global/Themes/CoreTheme';
 import { RWDProvider } from './global/RWD';
 import { GlobalStyles } from './global/GlobalStyles/GlobalStyles';
 import { AppRouter } from './global/AppRouter/AppRouter';
-import { ReactQuery } from 'global/ReactQuery/ReactQuery';
 import { Redux } from 'global/Redux/Redux';
 
 const App: FunctionComponent = () => (
   <Redux>
     <ThemeProvider theme={CoreTheme}>
       <RWDProvider>
-        <ReactQuery>
-          <Router>
-            <GlobalStyles />
-            <AppRouter />
-          </Router>
-        </ReactQuery>
+        <Router>
+          <GlobalStyles />
+          <AppRouter />
+        </Router>
       </RWDProvider>
     </ThemeProvider>
   </Redux>

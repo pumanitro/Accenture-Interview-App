@@ -16,7 +16,7 @@ export const When = () => {
         <CenteredWrapper>
           <DateFormField type="date" name="date" validateFunction={isRequired} />
           <StyledAt> at </StyledAt>
-          <TimeFormField type="time" name="time" min="00:00" max="12:00" validateFunction={isRequired} />
+          <TimeFormField type="time" name="time" validateFunction={isRequired} />
           <RadioGroupWrapper>
             <FormRadioGroup
               name="amOrPm"
