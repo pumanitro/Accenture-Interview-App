@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useCallback, useEffect, useState } from 'react';
 import { useObjectField } from './useObjectField';
 import { FormBagType, SetValueType } from './ObjectFormContext';
 import { ObjectFieldWrapper } from './ObjectField.s';
@@ -32,7 +32,7 @@ export const ObjectField: FC<ObjectFieldType> = ({ name, children, validateFunct
   const { value, setValue, formBag, id } = useObjectField(name);
   const [, setError] = useState<ErrorType>(undefined);
 
-  const validate = () => {
+  const validate = useCallback(() => {
     if (!validateFunction) {
       return;
     }
@@ -45,13 +45,18 @@ export const ObjectField: FC<ObjectFieldType> = ({ name, children, validateFunct
     }
 
     formBag.errors[name] = newErrors;
+
+    if (formBag.errors[name] === undefined) {
+      delete formBag.errors[name];
+    }
+
     setError(newErrors);
-  };
+  }, [formBag, name, validateFunction]);
 
   useEffect(() => {
     registerFieldValidation(id, formBag, validate);
     return () => unregisterFieldValidation(id, formBag);
-  }, []);
+  }, [id, formBag, validate]);
 
   return (
     <ObjectFieldWrapper width={width} onBlur={validate}>

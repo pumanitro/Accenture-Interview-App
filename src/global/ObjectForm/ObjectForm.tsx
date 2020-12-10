@@ -23,7 +23,7 @@ const Form: FC<FormPropType> = ({ children, onSubmit }) => {
       onSubmit={e => {
         e.preventDefault();
         runFieldValidations(formBag);
-        if (formBag.errors) {
+        if (!Object.keys(formBag.errors).length) {
           onSubmit(formBag);
         }
       }}
