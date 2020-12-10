@@ -9,32 +9,32 @@ export const fetchCategories = createAsyncThunk('categories/fetchAll', async () 
 
 type SliceThunkType = {
   entities: any[];
-  loading: 'idle' | 'pending';
+  isLoading: boolean;
   error: any;
 };
 
 // Then, handle actions in your reducers:
 export const categorySlice = createSlice({
   name: 'categories',
-  initialState: { entities: [], loading: 'idle', error: null } as SliceThunkType,
+  initialState: { entities: [], isLoading: false, error: null } as SliceThunkType,
   reducers: {
     // standard reducer logic, with auto-generated action types per reducer
   },
   extraReducers: builder => {
     builder.addCase(fetchCategories.pending, state => {
-      if (state.loading === 'idle') {
-        state.loading = 'pending';
+      if (!state.isLoading) {
+        state.isLoading = true;
       }
     });
     builder.addCase(fetchCategories.fulfilled, (state, action) => {
-      if (state.loading === 'pending') {
-        state.loading = 'idle';
+      if (state.isLoading) {
+        state.isLoading = false;
         state.entities = action.payload;
       }
     });
     builder.addCase(fetchCategories.rejected, (state, action) => {
-      if (state.loading === 'pending') {
-        state.loading = 'idle';
+      if (state.isLoading) {
+        state.isLoading = false;
         state.error = action.error;
       }
     });

@@ -6,8 +6,9 @@ import { AppWrapper } from 'components/AppWrapper/AppWrapper';
 import { Coordinator } from './Coordinator/Coordinator';
 import { When } from './When/When';
 import { PublishButton } from './Home.s';
+import { withDropdownsData } from './withDropdownsData';
 
-export const Home: FunctionComponent = () => (
+export const HomeContent: FunctionComponent = () => (
   <ObjectForm
     initialValues={{
       title: '',
@@ -35,3 +36,5 @@ export const Home: FunctionComponent = () => (
     </AppWrapper>
   </ObjectForm>
 );
+
+export const Home = withDropdownsData(HomeContent);
