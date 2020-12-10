@@ -7,6 +7,7 @@ export const Card = styled.div`
   flex-direction: column;
   width: 100%;
   margin-bottom: 24px;
+  box-sizing: border-box;
 
   box-shadow: 1px 1px 8px ${props => props.theme.colors.utils.border.shadow};
 `;

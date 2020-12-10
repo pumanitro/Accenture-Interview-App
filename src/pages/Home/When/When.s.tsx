@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import { FormInput } from 'components/FormInput/FormInput';
 import { StyledFormElement } from 'components/Input/Input.s';
+import { media } from 'global/RWD';
 
 export const StyledAt = styled.span`
   margin: 0 12px;
@@ -9,6 +10,14 @@ export const StyledAt = styled.span`
 export const RadioGroupWrapper = styled.span`
   margin: 0 12px;
   width: calc(100% + 24px);
+
+  ${media.xs`
+    width: auto;
+  `}
+
+  ${media.md`
+    width: calc(100% + 24px);
+  `}
 `;
 
 const RemoveFieldIcon = css`

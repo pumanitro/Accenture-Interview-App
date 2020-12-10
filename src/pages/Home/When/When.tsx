@@ -4,7 +4,7 @@ import { FormElement } from 'components/FormElement/FormElement';
 import { FormInput } from 'components/FormInput/FormInput';
 import { isRequired } from 'helpers/formValidations';
 import { FormRadioGroup } from 'components/FormRadioGroup/FormRadioGroup';
-import { CenteredWrapper, NumberFieldText } from '../About/About.s';
+import { CenteredRowWrapper, CenteredWrapper, NumberFieldText } from '../About/About.s';
 import { DateFormField, RadioGroupWrapper, StyledAt, TimeFormField } from './When.s';
 
 export const When = () => {
@@ -36,10 +36,10 @@ export const When = () => {
       </FormElement>
 
       <FormElement title="duration">
-        <CenteredWrapper>
+        <CenteredRowWrapper>
           <FormInput width="120px" placeholder="Number" type="number" min={0} name="duration" />
           <NumberFieldText> hour</NumberFieldText>
-        </CenteredWrapper>
+        </CenteredRowWrapper>
       </FormElement>
     </Card>
   );
