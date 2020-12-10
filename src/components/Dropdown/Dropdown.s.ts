@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { StyledFormElement } from 'components/Input/Input.s';
+import { StyledFormElement, StyledFormElementPropsType } from 'components/Input/Input.s';
 
-export const StyledSelect = styled.select`
+export const StyledSelect = styled.select<StyledFormElementPropsType>`
   ${StyledFormElement};
   height: 32px;
 
@@ -17,4 +17,7 @@ export const StyledSelect = styled.select`
   background-position: right 0.7em top 50%, 0 0;
   /* icon size, then gradient */
   background-size: 0.65em auto, 100%;
+
+  border: 1px solid
+    ${props => (props.hasError ? props.theme.colors.functional.error : props.theme.colors.utils.border.mid)};
 `;

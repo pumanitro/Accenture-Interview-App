@@ -3,6 +3,7 @@ import { FormElement } from 'components/FormElement/FormElement';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from 'global/Redux/rootReducer';
+import { isRequired } from '../../../../helpers/formValidations';
 
 export const ResponsibleDropdown = () => {
   const { entities } = useSelector((state: RootState) => state.coordinators);
@@ -31,6 +32,7 @@ export const ResponsibleDropdown = () => {
           others,
         }}
         placeholder="Select coordinator"
+        validateFunction={isRequired}
       />
     </FormElement>
   );

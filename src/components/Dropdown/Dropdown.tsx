@@ -1,7 +1,6 @@
 import React, { FC, ChangeEvent } from 'react';
 import { StyledSelect } from './Dropdown.s';
 import { StyledFormElementPropsType } from '../Input/Input.s';
-import { isObject } from 'helpers/jsUtils';
 
 export type Option = {
   value: string;
@@ -22,11 +21,9 @@ const getOptions = (options: Option[]) =>
     </option>
   ));
 
-export const Dropdown: FC<DropdownPropTypes> = ({ options, value, onChange, placeholder }) => {
-  console.log(isObject(options));
-
+export const Dropdown: FC<DropdownPropTypes> = ({ options, value, onChange, placeholder, hasError }) => {
   return (
-    <StyledSelect value={value} onChange={onChange}>
+    <StyledSelect value={value} onChange={onChange} hasError={hasError}>
       {placeholder && (
         <option value="" hidden>
           {placeholder}
