@@ -4,7 +4,7 @@ import { SliceThunkType, thunkBuilder } from 'helpers/slices';
 
 // First, create the thunk
 export const fetchCoordinators = createAsyncThunk('coordinators/fetchAll', async () => {
-  const response = await MockyService.getCategories();
+  const response = await MockyService.getCoordinators();
   return response;
 });
 

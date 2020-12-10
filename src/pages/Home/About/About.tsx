@@ -4,10 +4,10 @@ import { FormElement } from 'components/FormElement/FormElement';
 import { FormInput } from 'components/FormInput/FormInput';
 import { isRequired } from 'helpers/formValidations';
 import { FormTextarea } from 'components/FormTextarea/FormTextarea';
-import { FormDropdown } from 'components/FormDropdown/FormDropdown';
 import { FormRadioGroup } from 'components/FormRadioGroup/FormRadioGroup';
 import { CenteredWrapper, NumberFieldText } from './About.s';
 import { Fee } from './Fee/Fee';
+import { CategoryDropdown } from './CategoryDropdown/CategoryDropdown';
 
 export const About = () => {
   return (
@@ -26,26 +26,7 @@ export const About = () => {
         />
       </FormElement>
 
-      <FormElement title="category">
-        <FormDropdown
-          name="category"
-          options={[
-            {
-              value: 'fake',
-              label: 'fake',
-            },
-            {
-              value: 'fake2',
-              label: 'fake2',
-            },
-            {
-              value: 'fake3',
-              label: 'fake3',
-            },
-          ]}
-          placeholder="Select category"
-        />
-      </FormElement>
+      <CategoryDropdown />
       <FormElement title="payment">
         <CenteredWrapper>
           <FormRadioGroup
