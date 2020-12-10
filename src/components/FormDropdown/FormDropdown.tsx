@@ -7,7 +7,7 @@ type FormDropdownType = {
   name: string;
   validateFunction?: ValidateFunctionType;
   placeholder?: string;
-  options: Option[];
+  options: Option[] | Record<string, Option[]>;
 };
 
 export const FormDropdown: FC<FormDropdownType> = ({ name, validateFunction, options, placeholder }) => {
