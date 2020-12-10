@@ -12,6 +12,7 @@ export type FormBagType = {
   values: Record<string, any>;
   registeredFields: Record<string, RegisteredFieldType[]>;
   errors: Record<string, ErrorType>;
+  fieldValidations: Record<string, () => void>;
 };
 
 export const [useObjectForm, ContextProvider] = createCtx<FormBagType>();

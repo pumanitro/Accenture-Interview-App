@@ -30,7 +30,7 @@ export const ResponsibleDropdown = () => {
           ],
           others,
         }}
-        placeholder="Select category"
+        placeholder="Select coordinator"
       />
     </FormElement>
   );

@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { useObjectField } from './useObjectField';
 import { FormBagType, SetValueType } from './ObjectFormContext';
 import { ObjectFieldWrapper } from './ObjectField.s';
@@ -20,29 +20,41 @@ type ObjectFieldType = {
   children: (arg: FieldBagType) => React.ReactNode;
 };
 
+const registerFieldValidation = (id: string, formBag: FormBagType, validate: () => void) => {
+  formBag.fieldValidations[id] = validate;
+};
+
+const unregisterFieldValidation = (id: string, formBag: FormBagType) => {
+  formBag.fieldValidations[id] = () => {};
+};
+
 export const ObjectField: FC<ObjectFieldType> = ({ name, children, validateFunction, width }) => {
-  const { value, setValue, formBag } = useObjectField(name);
+  const { value, setValue, formBag, id } = useObjectField(name);
   const [, setError] = useState<ErrorType>(undefined);
 
+  const validate = () => {
+    if (!validateFunction) {
+      return;
+    }
+
+    let newErrors = validateFunction(formBag, name);
+
+    // for having posibility to return error false
+    if (newErrors === false) {
+      newErrors = undefined;
+    }
+
+    formBag.errors[name] = newErrors;
+    setError(newErrors);
+  };
+
+  useEffect(() => {
+    registerFieldValidation(id, formBag, validate);
+    return () => unregisterFieldValidation(id, formBag);
+  }, []);
+
   return (
-    <ObjectFieldWrapper
-      width={width}
-      onBlur={() => {
-        if (!validateFunction) {
-          return;
-        }
-
-        let newErrors = validateFunction(formBag, name);
-
-        // for having posibility to return error false
-        if (newErrors === false) {
-          newErrors = undefined;
-        }
-
-        formBag.errors[name] = newErrors;
-        setError(newErrors);
-      }}
-    >
+    <ObjectFieldWrapper width={width} onBlur={validate}>
       {children({ value, setValue, error: formBag.errors[name] })}
     </ObjectFieldWrapper>
   );

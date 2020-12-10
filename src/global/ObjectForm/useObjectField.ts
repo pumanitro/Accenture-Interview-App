@@ -46,5 +46,5 @@ export const useObjectField = (key: string) => {
 
   register(key, id, formBag, setValue);
 
-  return { value, setValue: reactivelySetValue(formBag, key), formBag };
+  return { value, setValue: reactivelySetValue(formBag, key), formBag, id };
 };

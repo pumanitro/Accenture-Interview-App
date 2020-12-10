@@ -5,4 +5,5 @@ export const PublishButton = styled.button`
   background-color: ${props => props.theme.colors.main.primary};
   border: none;
   color: ${props => props.theme.colors.utils.text.light};
+  margin-bottom: 24px;
 `;
