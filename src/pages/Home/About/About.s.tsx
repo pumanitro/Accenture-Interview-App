@@ -17,6 +17,7 @@ export const CenteredWrapper = styled.div`
 
   ${media.md`
     flex-direction: row;
+    align-items: center;
   `}
 `;
 

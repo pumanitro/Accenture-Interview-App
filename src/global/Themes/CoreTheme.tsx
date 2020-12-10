@@ -24,7 +24,7 @@ export const CoreTheme = {
     },
     functional: {
       error: '#eeb4b3',
-      success: '#4DC66E',
+      success: '#bbe1c6',
       disabled: '#A5A5A5',
     },
   },
