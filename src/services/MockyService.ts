@@ -14,4 +14,9 @@ export const MockyService = {
     const resp = await axiosInstance.get(buildUrl('5bcdd3942f00002c00c855ba'));
     return resp.data;
   },
+
+  getCoordinators: async () => {
+    const resp = await axiosInstance.get(buildUrl('5bcdd7992f00006300c855d5'));
+    return resp.data;
+  },
 };
