@@ -36,10 +36,6 @@ const RemoveFieldIcon = css`
     top: 0;
     width: auto;
   }
-
-  &::-webkit-datetime-edit-ampm-field {
-    display: none;
-  }
 `;
 
 export const DateFormField = styled(FormInput)`

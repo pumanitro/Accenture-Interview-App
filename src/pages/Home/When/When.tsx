@@ -3,9 +3,8 @@ import { CardTitle, Card } from 'components/Card/Card.s';
 import { FormElement } from 'components/FormElement/FormElement';
 import { FormInput } from 'components/FormInput/FormInput';
 import { isRequired } from 'helpers/formValidations';
-import { FormRadioGroup } from 'components/FormRadioGroup/FormRadioGroup';
 import { CenteredRowWrapper, CenteredWrapper, NumberFieldText } from '../About/About.s';
-import { DateFormField, RadioGroupWrapper, StyledAt, TimeFormField } from './When.s';
+import { DateFormField, StyledAt, TimeFormField } from './When.s';
 
 export const When = () => {
   return (
@@ -17,21 +16,6 @@ export const When = () => {
           <DateFormField type="date" name="date" validateFunction={isRequired} />
           <StyledAt> at </StyledAt>
           <TimeFormField type="time" name="time" validateFunction={isRequired} errorPosition={'bottom'} />
-          <RadioGroupWrapper>
-            <FormRadioGroup
-              name="amOrPm"
-              options={[
-                {
-                  value: 'AM',
-                  label: 'AM',
-                },
-                {
-                  value: 'PM',
-                  label: 'PM',
-                },
-              ]}
-            />
-          </RadioGroupWrapper>
         </CenteredWrapper>
       </FormElement>
 

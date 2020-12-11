@@ -26,13 +26,9 @@ export const HomeContent: FunctionComponent = () => {
         email: '',
         date: '',
         time: '',
-        amOrPm: 'AM',
         duration: '',
       }}
       onSubmit={formBag => {
-        const splitTime = formBag.values.time.split(':');
-        const time = `${formBag.values.amOrPm === 'AM' ? splitTime[0] : splitTime[0] + 12}:${splitTime[1]}`;
-
         const responsiblePerson = JSON.parse(formBag.values.responsible);
 
         console.log({
@@ -42,7 +38,7 @@ export const HomeContent: FunctionComponent = () => {
           paid_event: formBag.values.payment === 'Paid event',
           event_fee: formBag.values.fee,
           reward: formBag.values.reward,
-          date: `${formBag.values.date}T${time}`,
+          date: `${formBag.values.date}T${formBag.values.time}`,
           duration: formBag.values.duration * 3600,
           coordinator: {
             email: formBag.values.email,
